@@ -1,6 +1,6 @@
 # R-Sathvika-DAA-practical01-8939
 
-This repository contains implementations of classic sorting algorithms for the DAA (Design and Analysis of Algorithms) practical assignment. The Jupyter notebook demonstrates each algorithm with ex[...]
+This repository contains implementations of classic sorting algorithms for the DAA (Design and Analysis of Algorithms) practical assignment. The Jupyter notebook demonstrates each algorithm with examples and timing measurements.
 
 ## Implemented algorithms (concise descriptions)
 
@@ -31,7 +31,7 @@ This repository contains implementations of classic sorting algorithms for the D
 
 ## Practical 2 — Greedy Algorithms (summary)
 
-This practical explores greedy algorithm techniques and common greedy problems. The emphasis is on making locally optimal choices that lead to globally optimal solutions for specific problem class[...]
+This practical explores greedy algorithm techniques and common greedy problems. The emphasis is on making locally optimal choices that lead to globally optimal solutions for specific problem classes when the greedy choice property holds.
 
 - Activity Selection
   - What it does: Chooses the maximum number of non-overlapping activities by always selecting the next activity that finishes earliest.
@@ -50,7 +50,7 @@ This practical explores greedy algorithm techniques and common greedy problems. 
 
 ## Practical 3 — Dynamic Programming (summary)
 
-This practical focuses on dynamic programming (DP): solving complex problems by combining solutions to overlapping subproblems with optimal substructure. Examples demonstrate tabulation and memoiz[...]
+This practical focuses on dynamic programming (DP): solving complex problems by combining solutions to overlapping subproblems with optimal substructure. Examples demonstrate tabulation and memoization approaches.
 
 - Longest Common Subsequence (LCS)
   - What it does: Finds the longest sequence present in the same relative order in two sequences by building a DP table of subproblem solutions.
@@ -100,6 +100,15 @@ This practical covers fundamental graph algorithms for traversal, shortest paths
   - What it does: Builds an MST incrementally by repeatedly adding the minimum-weight edge that connects a new vertex to the growing tree.
   - Complexity: O((V + E) log V) with a min-heap priority queue.
   - Properties: Alternative to Kruskal's; grows the tree from a starting vertex.
+
+## Practical 7 — Coin Change (Dynamic Programming) — summary
+
+This practical implements the classic coin change problem using a dynamic programming approach to compute the minimum number of coins required to make a given amount when unlimited copies of each coin denomination are available.
+
+- What it does: Builds a 1D DP array dp[0..amount] where dp[i] stores the minimum coins needed for amount i. For each amount i, it tries each coin and updates dp[i] = min(dp[i], 1 + dp[i - coin]) when the coin fits.
+- Complexity: Time O(amount * k) where k is the number of coin denominations; Space O(amount).
+- Properties: Produces an optimal solution for the unbounded coin-change (minimum coins) problem; returns -1 when the amount cannot be formed with the given denominations.
+- Notes: This implementation is suitable when the target amount is not excessively large. For very large amounts or need for coin reconstruction, enhancements can store predecessor information or use BFS (for unweighted bounds) or optimized approaches.
 
 ## How to run
 - Open DAA_practial01.ipynb in Jupyter or Google Colab and execute the cells to see each algorithm's implementation, example runs, and timing output.
