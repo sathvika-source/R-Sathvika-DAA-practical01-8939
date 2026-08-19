@@ -31,7 +31,7 @@ This repository contains implementations of classic sorting algorithms for the D
 
 ## Practical 2 — Greedy Algorithms (summary)
 
-This practical explores greedy algorithm techniques and common greedy problems. The emphasis is on making locally optimal choices that lead to globally optimal solutions for specific problem classes.
+This practical explores greedy algorithm techniques and common greedy problems. The emphasis is on making locally optimal choices that lead to globally optimal solutions for specific problem class[...]
 
 - Activity Selection
   - What it does: Chooses the maximum number of non-overlapping activities by always selecting the next activity that finishes earliest.
@@ -50,7 +50,7 @@ This practical explores greedy algorithm techniques and common greedy problems. 
 
 ## Practical 3 — Dynamic Programming (summary)
 
-This practical focuses on dynamic programming (DP): solving complex problems by combining solutions to overlapping subproblems with optimal substructure. Examples demonstrate tabulation and memoization approaches.
+This practical focuses on dynamic programming (DP): solving complex problems by combining solutions to overlapping subproblems with optimal substructure. Examples demonstrate tabulation and memoiz[...]
 
 - Longest Common Subsequence (LCS)
   - What it does: Finds the longest sequence present in the same relative order in two sequences by building a DP table of subproblem solutions.
@@ -66,6 +66,40 @@ This practical focuses on dynamic programming (DP): solving complex problems by 
   - What it does: Finds the optimal parenthesization to minimize scalar multiplications when multiplying a chain of matrices using DP.
   - Complexity: O(n^3) time and O(n^2) space for n matrices.
   - Properties: Demonstrates DP on intervals and how optimal split points are recorded and used.
+
+## Practical 4 — Graph Algorithms (summary)
+
+This practical covers fundamental graph algorithms for traversal, shortest paths, and minimum spanning trees. These techniques are essential for solving problems on networks and graph structures.
+
+- Depth-First Search (DFS)
+  - What it does: Traverses a graph by exploring as far as possible along each branch before backtracking, using a stack-based approach.
+  - Complexity: O(V + E) where V is the number of vertices and E is the number of edges.
+  - Properties: Can detect cycles, find connected components, and topologically sort directed acyclic graphs (DAGs).
+
+- Breadth-First Search (BFS)
+  - What it does: Traverses a graph level by level using a queue, exploring all neighbors before moving to the next level.
+  - Complexity: O(V + E).
+  - Properties: Finds shortest paths in unweighted graphs, detects connected components, and is useful for level-order traversal.
+
+- Dijkstra's Algorithm
+  - What it does: Finds the shortest path from a source vertex to all other vertices in a weighted graph with non-negative edges using a greedy approach.
+  - Complexity: O((V + E) log V) with a min-heap priority queue.
+  - Properties: Greedy algorithm that guarantees shortest paths; does not work with negative edge weights.
+
+- Bellman-Ford Algorithm
+  - What it does: Computes shortest paths from a source vertex to all others, handling negative edge weights and detecting negative cycles.
+  - Complexity: O(V * E).
+  - Properties: Slower than Dijkstra but more versatile; can detect negative-weight cycles.
+
+- Kruskal's Algorithm (Minimum Spanning Tree)
+  - What it does: Finds a minimum spanning tree by greedily selecting edges in order of increasing weight, using a union-find (disjoint-set) data structure.
+  - Complexity: O(E log E) for sorting edges.
+  - Properties: Produces an MST with minimum total edge weight; uses the union-find optimization for efficiency.
+
+- Prim's Algorithm (Minimum Spanning Tree)
+  - What it does: Builds an MST incrementally by repeatedly adding the minimum-weight edge that connects a new vertex to the growing tree.
+  - Complexity: O((V + E) log V) with a min-heap priority queue.
+  - Properties: Alternative to Kruskal's; grows the tree from a starting vertex.
 
 ## How to run
 - Open DAA_practial01.ipynb in Jupyter or Google Colab and execute the cells to see each algorithm's implementation, example runs, and timing output.
