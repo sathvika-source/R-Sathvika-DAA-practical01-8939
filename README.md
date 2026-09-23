@@ -1,6 +1,6 @@
 # R-Sathvika-DAA-practical01-8939
 
-This repository contains implementations of classic sorting algorithms for the DAA (Design and Analysis of Algorithms) practical assignment. The Jupyter notebook demonstrates each algorithm with examples and timing measurements.
+This repository contains implementations of classic sorting algorithms for the DAA (Design and Analysis of Algorithms) practical assignment. The Jupyter notebook demonstrates each algorithm with examples and outputs.
 
 ## Implemented algorithms (concise descriptions)
 
@@ -31,7 +31,7 @@ This repository contains implementations of classic sorting algorithms for the D
 
 ## Practical 2 — Greedy Algorithms (summary)
 
-This practical explores greedy algorithm techniques and common greedy problems. The emphasis is on making locally optimal choices that lead to globally optimal solutions for specific problem classes when the greedy choice property holds.
+This practical explores greedy algorithm techniques and common greedy problems. The emphasis is on making locally optimal choices that lead to globally optimal solutions for specific problem classes.
 
 - Activity Selection
   - What it does: Chooses the maximum number of non-overlapping activities by always selecting the next activity that finishes earliest.
@@ -50,7 +50,7 @@ This practical explores greedy algorithm techniques and common greedy problems. 
 
 ## Practical 3 — Dynamic Programming (summary)
 
-This practical focuses on dynamic programming (DP): solving complex problems by combining solutions to overlapping subproblems with optimal substructure. Examples demonstrate tabulation and memoization approaches.
+This practical focuses on dynamic programming (DP): solving complex problems by combining solutions to overlapping subproblems with optimal substructure. Examples demonstrate tabulation and memoization techniques.
 
 - Longest Common Subsequence (LCS)
   - What it does: Finds the longest sequence present in the same relative order in two sequences by building a DP table of subproblem solutions.
@@ -101,14 +101,23 @@ This practical covers fundamental graph algorithms for traversal, shortest paths
   - Complexity: O((V + E) log V) with a min-heap priority queue.
   - Properties: Alternative to Kruskal's; grows the tree from a starting vertex.
 
+## Practical 5 — 0/1 Knapsack (Dynamic Programming) — summary
+
+This practical implements the classic 0/1 Knapsack problem using dynamic programming in the notebook `DAA Practical-05.ipynb`. The aim is to determine the maximum total value that can be carried without exceeding a given weight capacity.
+
+- What it does: Uses a DP table where `dp[i][w]` stores the best value achievable using the first `i` items and capacity `w`. Each item can either be excluded or included if it fits in the remaining capacity.
+- Complexity: O(n * W) time and O(n * W) space, where `n` is the number of items and `W` is the knapsack capacity.
+- Properties: Produces the exact optimum for the 0/1 knapsack problem; unlike the fractional variant, items cannot be split.
+- Notes: The notebook reads user inputs for item weights, values, and capacity, then prints the maximum achievable value.
+
 ## Practical 7 — Coin Change (Dynamic Programming) — summary
 
-This practical implements the classic coin change problem using a dynamic programming approach to compute the minimum number of coins required to make a given amount when unlimited copies of each coin denomination are available.
+This practical implements the classic coin change problem using a dynamic programming approach to compute the minimum number of coins required to make a given amount when unlimited copies of each denomination are allowed.
 
-- What it does: Builds a 1D DP array dp[0..amount] where dp[i] stores the minimum coins needed for amount i. For each amount i, it tries each coin and updates dp[i] = min(dp[i], 1 + dp[i - coin]) when the coin fits.
+- What it does: Builds a 1D DP array `dp[0..amount]` where `dp[i]` stores the minimum coins needed for amount `i`. For each amount `i`, it tries each coin and updates `dp[i] = min(dp[i], 1 + dp[i - coin])` when valid.
 - Complexity: Time O(amount * k) where k is the number of coin denominations; Space O(amount).
 - Properties: Produces an optimal solution for the unbounded coin-change (minimum coins) problem; returns -1 when the amount cannot be formed with the given denominations.
-- Notes: This implementation is suitable when the target amount is not excessively large. For very large amounts or need for coin reconstruction, enhancements can store predecessor information or use BFS (for unweighted bounds) or optimized approaches.
+- Notes: This implementation is suitable when the target amount is not excessively large. For very large amounts or need for coin reconstruction, enhancements can store predecessor information or track chosen coins.
 
 ## How to run
 - Open DAA_practial01.ipynb in Jupyter or Google Colab and execute the cells to see each algorithm's implementation, example runs, and timing output.
