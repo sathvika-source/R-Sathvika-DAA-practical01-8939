@@ -1,6 +1,6 @@
 # R-Sathvika-DAA-practical01-8939
 
-This repository contains implementations of classic sorting algorithms for the DAA (Design and Analysis of Algorithms) practical assignment. The Jupyter notebook demonstrates each algorithm with examples and complexity notes.
+This repository contains implementations of classic sorting algorithms for the DAA (Design and Analysis of Algorithms) practical assignment. The Jupyter notebook demonstrates each algorithm with examples, complexity analysis, and simple output.
 
 ## Implemented algorithms (concise descriptions)
 
@@ -103,7 +103,7 @@ This practical covers fundamental graph algorithms for traversal, shortest paths
 
 ## Practical 5 — 0/1 Knapsack (Dynamic Programming) — summary
 
-This practical implements the classic 0/1 Knapsack problem using dynamic programming in the notebook `DAA Practical-05.ipynb`. The aim is to determine the maximum total value that can be carried without exceeding the weight limit.
+This practical implements the classic 0/1 Knapsack problem using dynamic programming in the notebook `DAA Practical-05.ipynb`. The aim is to determine the maximum total value that can be carried without exceeding the given capacity.
 
 - What it does: Uses a DP table where `dp[i][w]` stores the best value achievable using the first `i` items and capacity `w`. Each item can either be excluded or included if it fits in the remaining capacity.
 - Complexity: O(n * W) time and O(n * W) space, where `n` is the number of items and `W` is the knapsack capacity.
@@ -112,9 +112,9 @@ This practical implements the classic 0/1 Knapsack problem using dynamic program
 
 ## Practical 6 — Matrix Chain Multiplication (Dynamic Programming) — summary
 
-This practical implements the Matrix Chain Multiplication problem using dynamic programming in the notebook `DAA Practical-06.ipynb`. The goal is to find the optimal parenthesization of a matrix chain to minimize the total number of scalar multiplications required.
+This practical implements the Matrix Chain Multiplication problem using dynamic programming in the notebook `DAA Practical-06.ipynb`. The goal is to find the optimal parenthesization of a matrix chain to minimize the total scalar multiplication cost.
 
-- What it does: Uses a DP table where `dp[i][j]` stores the minimum cost to multiply matrices from index `i` to `j`. For every possible split point `k`, it evaluates the cost of multiplying the left and right subchains and picks the minimum.
+- What it does: Uses a DP table where `dp[i][j]` stores the minimum cost to multiply matrices from index `i` to `j`. For every possible split point `k`, it evaluates the cost of multiplying the left and right subchains.
 - Complexity: O(n^3) time and O(n^2) space, where `n` is the number of matrices.
 - Properties: Produces the exact optimal multiplication order and demonstrates the interval-based dynamic programming approach used in optimization problems.
 - Notes: The notebook takes the matrix dimensions as input and prints the minimum multiplication cost needed to compute the product.
@@ -126,7 +126,23 @@ This practical implements the classic coin change problem using a dynamic progra
 - What it does: Builds a 1D DP array `dp[0..amount]` where `dp[i]` stores the minimum coins needed for amount `i`. For each amount `i`, it tries each coin and updates `dp[i] = min(dp[i], 1 + dp[i - coin])`.
 - Complexity: Time O(amount * k) where k is the number of coin denominations; Space O(amount).
 - Properties: Produces an optimal solution for the unbounded coin-change (minimum coins) problem; returns -1 when the amount cannot be formed with the given denominations.
-- Notes: This implementation is suitable when the target amount is not excessively large. For very large amounts or need for coin reconstruction, enhancements can store predecessor information or track the chosen coins.
+- Notes: This implementation is suitable when the target amount is not excessively large. For very large amounts or needs for coin reconstruction, enhancements can store predecessor information or track the selected coins.
+
+## Practical 8 — Graph Traversal (BFS and DFS) — summary
+
+This practical implements two important graph traversal techniques: Breadth-First Search (BFS) and Depth-First Search (DFS), both of which are used to explore the vertices of a graph in a systematic manner.
+
+- Breadth-First Search (BFS)
+  - What it does: Starts from a source node and explores all neighboring nodes level by level using a queue.
+  - Complexity: O(V + E), where V is the number of vertices and E is the number of edges.
+  - Properties: Useful for finding shortest paths in unweighted graphs and for exploring graph levels in order.
+
+- Depth-First Search (DFS)
+  - What it does: Explores as far as possible along each branch before backtracking, using recursion or an explicit stack.
+  - Complexity: O(V + E).
+  - Properties: Useful for cycle detection, connected components, path existence, and traversal of a graph structure.
+
+- Notes: The notebook demonstrates both algorithms on the same graph and prints the traversal sequence, highlighting how queue-based and stack-based exploration differ.
 
 ## How to run
 - Open DAA_practial01.ipynb in Jupyter or Google Colab and execute the cells to see each algorithm's implementation, example runs, and timing output.
