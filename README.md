@@ -1,6 +1,6 @@
 # R-Sathvika-DAA-practical01-8939
 
-This repository contains implementations of classic sorting algorithms for the DAA (Design and Analysis of Algorithms) practical assignment. The Jupyter notebook demonstrates each algorithm with examples and outputs.
+This repository contains implementations of classic sorting algorithms for the DAA (Design and Analysis of Algorithms) practical assignment. The Jupyter notebook demonstrates each algorithm with examples and complexity notes.
 
 ## Implemented algorithms (concise descriptions)
 
@@ -103,21 +103,30 @@ This practical covers fundamental graph algorithms for traversal, shortest paths
 
 ## Practical 5 — 0/1 Knapsack (Dynamic Programming) — summary
 
-This practical implements the classic 0/1 Knapsack problem using dynamic programming in the notebook `DAA Practical-05.ipynb`. The aim is to determine the maximum total value that can be carried without exceeding a given weight capacity.
+This practical implements the classic 0/1 Knapsack problem using dynamic programming in the notebook `DAA Practical-05.ipynb`. The aim is to determine the maximum total value that can be carried without exceeding the weight limit.
 
 - What it does: Uses a DP table where `dp[i][w]` stores the best value achievable using the first `i` items and capacity `w`. Each item can either be excluded or included if it fits in the remaining capacity.
 - Complexity: O(n * W) time and O(n * W) space, where `n` is the number of items and `W` is the knapsack capacity.
 - Properties: Produces the exact optimum for the 0/1 knapsack problem; unlike the fractional variant, items cannot be split.
 - Notes: The notebook reads user inputs for item weights, values, and capacity, then prints the maximum achievable value.
 
+## Practical 6 — Matrix Chain Multiplication (Dynamic Programming) — summary
+
+This practical implements the Matrix Chain Multiplication problem using dynamic programming in the notebook `DAA Practical-06.ipynb`. The goal is to find the optimal parenthesization of a matrix chain to minimize the total number of scalar multiplications required.
+
+- What it does: Uses a DP table where `dp[i][j]` stores the minimum cost to multiply matrices from index `i` to `j`. For every possible split point `k`, it evaluates the cost of multiplying the left and right subchains and picks the minimum.
+- Complexity: O(n^3) time and O(n^2) space, where `n` is the number of matrices.
+- Properties: Produces the exact optimal multiplication order and demonstrates the interval-based dynamic programming approach used in optimization problems.
+- Notes: The notebook takes the matrix dimensions as input and prints the minimum multiplication cost needed to compute the product.
+
 ## Practical 7 — Coin Change (Dynamic Programming) — summary
 
-This practical implements the classic coin change problem using a dynamic programming approach to compute the minimum number of coins required to make a given amount when unlimited copies of each denomination are allowed.
+This practical implements the classic coin change problem using a dynamic programming approach to compute the minimum number of coins required to make a given amount when unlimited copies of each denomination are available.
 
-- What it does: Builds a 1D DP array `dp[0..amount]` where `dp[i]` stores the minimum coins needed for amount `i`. For each amount `i`, it tries each coin and updates `dp[i] = min(dp[i], 1 + dp[i - coin])` when valid.
+- What it does: Builds a 1D DP array `dp[0..amount]` where `dp[i]` stores the minimum coins needed for amount `i`. For each amount `i`, it tries each coin and updates `dp[i] = min(dp[i], 1 + dp[i - coin])`.
 - Complexity: Time O(amount * k) where k is the number of coin denominations; Space O(amount).
 - Properties: Produces an optimal solution for the unbounded coin-change (minimum coins) problem; returns -1 when the amount cannot be formed with the given denominations.
-- Notes: This implementation is suitable when the target amount is not excessively large. For very large amounts or need for coin reconstruction, enhancements can store predecessor information or track chosen coins.
+- Notes: This implementation is suitable when the target amount is not excessively large. For very large amounts or need for coin reconstruction, enhancements can store predecessor information or track the chosen coins.
 
 ## How to run
 - Open DAA_practial01.ipynb in Jupyter or Google Colab and execute the cells to see each algorithm's implementation, example runs, and timing output.
